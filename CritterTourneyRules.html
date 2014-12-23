@@ -1,0 +1,108 @@
+<html>
+	<head>
+		<title>Critter Tournament Rules</title>
+		<link href="../../style.css" type="text/css" rel="stylesheet" />
+		
+		<style type="text/css">
+			#mainpane {
+				margin: 2em 10%;
+			}
+			
+			h2 {
+				margin-top: 2em;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="mainpane">
+			<h1>CSE 142 Critters Husky Tournament Rules</h1>
+			
+			<p>
+				<em>last updated Tues Nov 29 2011</em>
+			</p>
+			
+			<p>
+				On the last day of class, we will host a Critter tournament.  Here are the rules.  If something is missing or unclear, please email an instructor.
+			</p>
+			
+			
+			<h2>How do I participate?</h2>
+			
+			<p>
+				If you want to participate in the tournament, just turn in your assignment by <strong>Thursday, December 6, at 8:00pm</strong> to be included in the tournament automatically.  If you want to be in the tournament but still want to work on your assignment past Thursday night, submit it an initial time before Thursday night, and then re-submit it again later.  The TA will grade the latest version.
+			</p>
+
+
+			<h2>How do the battles work?</h2>
+
+			<p>
+				The tournament consists of a series of <strong>battles</strong>.  In each battle, two students' Husky classes will be placed into the simulator along with the other standard animals: Ant, Bird, Hippo, Vulture, and Stone.  We run CritterMain with a standard 60x50 world, using 25 of each kind of animal.  Your classes are renamed to unique names for the tournament; so one might be called Husky_AA_Smith_James and one might be called Husky_C_BD_Doe_Jane.
+			</p>
+				
+			</p>
+				We let the battle run until either one student's Huskys are completely eliminated and/or until at least 1000 moves have passed.  At this point, generally whichever student's Husky species has the <strong>more points</strong> wins the battle.  If the battle is still being hotly contested after 1000 moves, we'll keep the simulator running until the scores and state are fairly stable and the clear winner has emerged.
+			</p>
+
+			<p>
+				It's possible that one husky will be ahead in terms of points, but all of that species has been killed off (0 alive), and the other student still has Huskies alive and earning points.  In such a case, the simulator will keep running to allow the living huskies to overtake the dead one, if this will happen in a reasonably short amount of time.
+			</p>
+
+			<p>
+				At the instructor's discretion, if the victory is considered a "weak" victory, we may choose to change the match into best 2 out of 3.  This is done by pressing the Reset button and starting the simulator again.  A "weak" victory is one that meets one of the following conditions:
+			</p>
+
+			<ul>
+				<li>The scores are very close.  (within a few points)</li>
+				<li>One husky species in the lead (higher point score) has been entirely killed off, and the other student has a significant number of huskies still alive, but it will take a long time for them to catch up.</li>
+			</ul>
+			
+			
+			<h2>Which students' Huskies are shown in class on Friday?</h2>
+			
+			<p>
+				Unfortunately there isn't enough time in the lecture to show every Husky.  We only have time to face off the top 16 in a <a href="bracket.html">bracket</a>, NCAA basketball tournament style.  In order to figure out which 16 to use for the in-class tournament, we run a "regular season" in which every student's Husky species will play many battles against randomly chosen opponent Husky classes.  We run a season of many games (at least 64 for each student), then we grab the top 16 students that have the best win/loss records.  They advance to the "playoffs", which will take place live in lecture on the last day of class.  Husky #1 battles #16, #2 battles #15, and so on.  Winners advance and losers are eliminated. Eventually one Husky is the champion.  (The instructor reserves the right to remove a player from the bracket if that student is not present at lecture on the day of the tournament.)
+			</p>
+
+<!--
+			<p>
+				To encourage creativity and non-violence, we may also do special runs of interesting non-violent "herbivore" Huskies that have been submitted.
+			</p>
+-->
+			
+			<p>
+				<strong>IMPORTANT NOTE</strong>: The simulator runs these 64+ battles for your Husky by essentially '<strong>resetting</strong>' the class between each battle and adding 25 new huskies to the world.  It's like if you were to push the 'Reset' button on the simulator user interface.  Some students' Huskies crash when the Reset button is pressed, because they assume there will only be 25 huskies that are ever constructed during the entire run of the program, etc.  This common problem sometimes prevents some of the very best Huskies from advancing in the tournament.  Test your Husky with the Reset feature to make sure it doesn't crash!
+			</p>
+			
+			<p>
+				When the simular resets the game, it calls <code>reset</code> on each of your Husky critters.  If your class uses any static/shared state, it can be hard to clean that up properly.  So therefore the simulator will also check for the following static method and call it on your Husky class if it is present (the header must match exactly):
+			</p>
+			
+			<pre>
+<strong>public static void resetAll()</strong>
+</pre>
+			
+
+			<h2>Are there any things I am not allowed to do?</h2>
+
+			<p>
+				A student's husky will be given a loss for the battle if it throws an exception.  (Be careful with those array bounds and null values.)
+			</p>
+			
+			<p>
+				A husky will be removed from the tournament if it tries to "hack" or "cheat" at the game, such as by writing files on the instructor's computer, connecting to the internet or network, or directly accessing the game model to change its contents or force a certain game result.  We run our tournament system with a security setting that blocks such access from most "hack" attempts and sets that student to be the loser of the match.  Play fair!
+			</p>
+
+
+			<h2>What is at stake?  What do I get if I win?</h2>
+
+			<p>
+				No grade points will be based on tournament performance.  For example, a Husky that sits completely still might fare well in the tournament, but it will not receive full grade points because it is too trivial.
+			</p>
+			
+			<p>
+				But we will give out non-valuable silly <strong>prizes</strong> for some of the top-ranked winners.  Many of these prizes have been donated by your classmates, and some by our awesome TAs.
+			</p>
+		</div>
+	</body>
+</html>

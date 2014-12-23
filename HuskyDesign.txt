@@ -1,0 +1,13 @@
+Joseph Zhong
+Husky Design
+
+Constructor 
+	Must keep track of every object within two move steps away
+Eat Method
+	Return true only if it is safe (within two moves away)
+Fight method
+	This is really hard…Some can disguise themselves, and I don’t know how to counter exactly…
+Movemethod
+	Moves towards closest enemy if I think I can beat it, otherwise run away from threats, and else, move towards closest food or same husky
+
+ 
